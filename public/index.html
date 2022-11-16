@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Punica Editor</title>
+    <script
+      src="https://kit.fontawesome.com/117ca4272d.js"
+      crossorigin="anonymous"
+      async="false"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --punica-header: #f02600;
+        --punica-extension: #253238e0;
+        --punica-view: #fff;
+        --punica-sidebar-left: #253238;
+        --punica-sidebar-right: #dce2e5;
+        --punica-statusbar: rgb(0, 122, 204);
+      }
+
+      .punica {
+        box-sizing: border-box;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 45px 1fr auto;
+        grid-template-areas: 'header' 'section' 'statusbar';
+      }
+      .punica-header {
+        grid-area: header;
+        background-color: var(--punica-header);
+      }
+      .punica-section {
+        grid-area: section;
+        box-sizing: border-box;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: auto auto 1fr auto;
+        grid-template-areas: 'extension sidebar-left view sidebar-right';
+      }
+      .punica-extension {
+        grid-area: extension;
+        background-color: var(--punica-extension);
+      }
+      .punica-sidebar-left {
+        grid-area: sidebar-left;
+        background-color: var(--punica-sidebar-left);
+      }
+      .punica-view {
+        grid-area: view;
+        background-color: var(--punica-view);
+      }
+      .punica-sidebar-right {
+        grid-area: sidebar-right;
+        background-color: var(--punica-sidebar-right);
+      }
+      .punica-statusbar {
+        grid-area: statusbar;
+        background-color: var(--punica-statusbar);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="punica">
+      <div class="punica-header">
+        <i class="fa-solid fa-grid"></i>
+      </div>
+      <div class="punica-section">
+        <div class="punica-extension"><div style="width: 60px"></div></div>
+        <div class="punica-sidebar-left"><div style="width: 300px"></div></div>
+        <div class="punica-view"></div>
+        <div class="punica-sidebar-right"><div style="width: 300px"></div></div>
+      </div>
+      <div class="punica-statusbar"><div style="height: 22px"></div></div>
+    </div>
+  </body>
+</html>
